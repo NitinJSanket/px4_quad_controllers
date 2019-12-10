@@ -30,10 +30,10 @@
 ## Offboard Control Setup
 1. [MavROS Binary Installation](https://dev.px4.io/v1.9.0/en/ros/mavros_installation.html)
 2. Launch mavros
-	2.1. roslaunch mavros px4.launch
-	2.2. rosrun mavros mavsys rate --all 10
-	2.3. rosrun mavros mavparam set SYSID_MYGCS 1
-3. Run RCOveride node which publishes to the topic : '/mavros/rc/override'. RCOveride node should publihs message with same rc array size as 'mavros/rc/in'. If you publish 0, that channel will not be overidden, but if you publish any other positive value, it will be overidden. After override, echo 'mavros/rc/in' to confirm that the RC override is working.
+	2.1. `roslaunch mavros px4.launch`
+	2.2. `rosrun mavros mavsys rate --all 10`
+	2.3. `rosrun mavros mavparam set SYSID_MYGCS 1`
+3. Run RCOveride node which publishes to the topic : `/mavros/rc/override`. RCOveride node should publihs message with same rc array size as `mavros/rc/in`. If you publish 0, that channel will not be overidden, but if you publish any other positive value, it will be overidden. After override, echo 'mavros/rc/in' to confirm that the RC override is working.
 
 This repository contains controllers which can be used in unison with mavros and the px4 stack in order to achieve minimum snap trajectory tracking.
 The position feedback will be done using the vicon system.
